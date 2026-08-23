@@ -1,0 +1,30 @@
+# Secrets and local environment
+.env
+.venv/
+venv/
+venv_fresh/
+
+# Python generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local application data
+audit_log.json
+latest_analysis.json
+resume_chroma_db_v*/
+resume_vector_store/
+chroma_db/
+*.sqlite3
+
+# IDE and temporary files
+.vscode/
+*.code-workspace
+tmp*.html
+screenshots.docx
+
+# OS files
+.DS_Store
+Thumbs.db

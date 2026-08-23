@@ -1,0 +1,15 @@
+fastapi
+pydantic
+uvicorn
+streamlit
+requests
+pypdf
+python-docx
+reportlab
+python-dotenv
+openai
+faiss-cpu
+numpy
+chromadb==1.1.1
+crewai==1.15.17
+pytest
