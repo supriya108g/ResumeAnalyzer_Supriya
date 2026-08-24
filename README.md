@@ -54,6 +54,10 @@ The result view displays the workflow decision and generated resume.
 
 ![Resume analysis result](docs/screenshots/result-overview.png)
 
+The scoring view compares the uploaded and improved resume scores alongside the workflow decision.
+
+![Uploaded and improved resume scoring](docs/screenshots/scoring.png)
+
 ### Education and Downloads
 
 Education is restored from the uploaded source resume, and the result can be exported as DOCX or PDF.
