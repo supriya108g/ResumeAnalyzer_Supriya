@@ -11,5 +11,6 @@ audit_log.json
 latest_analysis.json
 resume_chroma_db_v*
 *.sqlite3
+*.tar
+*.tar.gz
 tmp*.html
-docs/screenshots
