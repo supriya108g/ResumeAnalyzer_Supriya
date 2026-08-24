@@ -1,0 +1,52 @@
+services:
+  api:
+    image: resume-analyzer:1.0
+    build:
+      context: .
+    command:
+      - python
+      - -m
+      - uvicorn
+      - ResumeAnalyzer:app
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8001"
+    env_file:
+      - .env
+    ports:
+      - "127.0.0.1:8001:8001"
+    volumes:
+      - resume-data:/app/resume_chroma_db_v3
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://localhost:8001/health')"
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  ui:
+    image: resume-analyzer:1.0
+    command:
+      - python
+      - -m
+      - streamlit
+      - run
+      - streamlit_app.py
+      - --server.address
+      - 0.0.0.0
+      - --server.port
+      - "8501"
+    environment:
+      FASTAPI_URL: http://api:8001/resume-analyzer
+    ports:
+      - "127.0.0.1:8501:8501"
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  resume-data:

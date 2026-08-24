@@ -19,6 +19,10 @@ resume_vector_store/
 chroma_db/
 *.sqlite3
 
+# Exported Docker images
+*.tar
+*.tar.gz
+
 # IDE and temporary files
 .vscode/
 *.code-workspace
